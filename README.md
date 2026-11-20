@@ -272,3 +272,37 @@ The default research profile (`src/cross_modal_anomaly_detection/config/detector
 | RGB edge guard | `8` pixels |
 
 Settings are empirically tuned for the experimental setup. This implementation only detects *potential inconsistencies*, not the fault's cause or a safety-certified failure.
+
+## Diagnostics
+
+Check the published streams and detector status:
+
+```bash
+ros2 topic hz /oakd/rgb/preview/image_rect_clean
+ros2 topic hz /depth_anything/depth
+ros2 topic hz /cross_modal/lidar_projected_points
+ros2 topic hz /cross_modal/lidar_expected_projection
+ros2 topic echo /cross_modal_anomaly/status --once
+ros2 topic echo /cross_modal_anomaly/anomaly --once
+```
+
+For optional simulation, check the controller and injector state:
+
+```bash
+ros2 topic echo /faults/keys --once
+ros2 topic echo /faults/status --once
+ros2 topic info /faults/keys --verbose
+```
+
+If the controller or detector does not behave as expected, verify that each node subscribes to the intended sensor topics and that sensor timestamps, camera calibration, TF transforms, and ROS 2 discovery settings are valid. For sustained GUI-controlled faults, use the hold or optional toggle behavior described above.
+
+## Tests
+
+The repository includes ROS-independent source and UI-state regression checks:
+
+```bash
+python3 -m unittest discover -s tests -v
+bash -n scripts/*.sh
+```
+
+These checks cover Python module syntax, package manifests, entry points, overlay bootstrap, default detector configuration, and GUI hold/release state handling. A full ROS 2 `colcon` build, C++ compilation, live topic synchronization, and end-to-end detection must be verified on your robot or ROS-equipped development machine. For normal operation, confirm all expected topics are active and the network's ROS domain / DDS discovery settings match across machines.
