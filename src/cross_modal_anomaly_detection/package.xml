@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+  <package format="3">
+    <name>cross_modal_anomaly_detection</name>
+    <version>0.1.0</version>
+    <description>RGB and LiDAR cross-modal anomaly detection with spatial consistency</description>
+    <maintainer email="maintainer@example.org">Research software maintainer</maintainer>
+    <license>Apache-2.0</license>
+    <buildtool_depend>ament_python</buildtool_depend>
+      <exec_depend>rclpy</exec_depend>
+<exec_depend>sensor_msgs</exec_depend>
+<exec_depend>sensor_msgs_py</exec_depend>
+<exec_depend>nav_msgs</exec_depend>
+<exec_depend>std_msgs</exec_depend>
+<exec_depend>vision_msgs</exec_depend>
+<exec_depend>cv_bridge</exec_depend>
+    <export><build_type>ament_python</build_type></export>
+  </package>

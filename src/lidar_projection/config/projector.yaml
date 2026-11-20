@@ -1,0 +1,27 @@
+lidar_projection:
+  ros__parameters:
+    image_topic: '/oakd/rgb/preview/image_rect_clean'
+    scan_topic: '/scan'
+    camera_info_topic: '/oakd/rgb/preview/camera_info'
+    relative_depth_topic: '/depth_anything/depth'
+    camera_frame: 'oakd_rgb_camera_optical_frame'
+    projected_points_topic: '/cross_modal/lidar_projected_points'
+    expected_points_topic: '/cross_modal/lidar_expected_projection'
+    rejected_expected_points_topic: '/cross_modal/lidar_expected_projection_rejected'
+    show_rejected_expected_overlay: false
+    expected_visualization_topic: '/cross_modal/expected_depth_overlay'
+    publish_expected_points: true
+    expected_max_residual: 0.5
+    calibration_alpha: 0.35
+    calibration_max_update_fraction: 0.2
+    calibration_min_inlier_fraction: 0.55
+    calibration_rgb_mask_enabled: true
+    calibration_freeze_on_obstruction: true
+    calibration_rgb_max_time_difference: 0.2
+    yaw_correction_deg: 2.5
+    valid_mask_topic: '/rgb_rectification/valid_mask'
+    require_valid_mask: true
+    lidar_median_window: 1
+    lidar_temporal_filter: false
+    uv_temporal_filter: false
+    visualize: true

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+  <package format="3">
+    <name>rgb_preprocessing</name>
+    <version>0.1.0</version>
+    <description>RGB rectification and border masking</description>
+    <maintainer email="maintainer@example.org">Research software maintainer</maintainer>
+    <license>Apache-2.0</license>
+    <buildtool_depend>ament_python</buildtool_depend>
+      <exec_depend>rclpy</exec_depend>
+<exec_depend>sensor_msgs</exec_depend>
+<exec_depend>cv_bridge</exec_depend>
+<exec_depend>image_proc</exec_depend>
+    <export><build_type>ament_python</build_type></export>
+  </package>

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>lidar_projection</name>
+  <version>0.0.1</version>
+  <description>ROS-native TurtleBot 4 LiDAR to rectified OAK-D RGB projection.</description>
+
+  <maintainer email="user@example.com">user</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_geometry</depend>
+  <depend>laser_geometry</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_geometry_msgs</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
